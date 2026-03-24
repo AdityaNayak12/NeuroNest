@@ -6,7 +6,7 @@ const StudyContext = createContext();
 export const StudyProvider = ({children}) =>{
     const [subjects, setSubjects] = useState([]);
     const [topics, setTopics] = useState([]);
-    const [tasks, setTaks] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
 
     const addSubject = (subject) =>{
