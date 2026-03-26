@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Dashboard from "./pages/Dashboard";
 import Subjects from "./pages/Subjects";
 import Tasks from "./pages/Tasks";
+import Revision from "./pages/Revision";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/subjects" element={<Subjects />} />
             <Route path="/tasks" element={<Tasks />} />
-
+            <Route path="/revision" element={<Revision />} />
           </Routes>
         </Router>
       );
