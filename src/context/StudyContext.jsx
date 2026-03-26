@@ -31,6 +31,16 @@ export const StudyProvider = ({children}) =>{
         );
     };
 
+    const toggleRevision = (id) => {
+        setTasks((prev) =>
+          prev.map((task) =>
+            task.id === id
+              ? { ...task, needsRevision: !task.needsRevision }
+              : task
+          )
+        );
+    };
+
     return (
         <StudyContext.Provider
         value={{
@@ -40,7 +50,8 @@ export const StudyProvider = ({children}) =>{
             addSubject,
             addTask,
             addTopic,
-            updateTaskStatus
+            updateTaskStatus,
+            toggleRevision
         }}
         >
             {children}
