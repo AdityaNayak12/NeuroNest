@@ -1,16 +1,60 @@
-# React + Vite
+# NeuroNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered study companion built with React to help students organize subjects, manage tasks, track progress, and revise efficiently.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dashboard** — Overview of subjects, completed & pending tasks, and recent activity
+- **Subjects & Topics** — Create subjects and add topics under each one
+- **Tasks** — Create tasks linked to subjects with priority levels (Low / Medium / High) and toggle completion status
+- **Revision** — Flag tasks for revision, filter by subject, and track revision progress
+- **LocalStorage Persistence** — All data is saved locally and survives page refreshes
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer     | Technology                          |
+| --------- | ----------------------------------- |
+| Framework | React 19 + Vite 8                   |
+| Styling   | Tailwind CSS v4                     |
+| Routing   | React Router v7                     |
+| State     | React Context API + LocalStorage    |
+| HTTP      | Axios (for upcoming AI integration) |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+## Project Structure
+
+```
+src/
+├── App.jsx                  # Router & route definitions
+├── main.jsx                 # Entry point
+├── index.css                # Tailwind imports
+├── components/
+│   └── Navbar.jsx           # Navigation bar
+├── context/
+│   └── StudyContext.jsx      # Global state with localStorage persistence
+└── pages/
+    ├── Dashboard.jsx         # Stats & recent tasks
+    ├── Subjects.jsx          # Subject & topic management
+    ├── Tasks.jsx             # Task creation & status tracking
+    ├── Revision.jsx          # Revision list & filtering
+    └── AITools.jsx           # AI features (coming soon)
+```
+
+## Roadmap
+
+- [ ] AI-powered summary generation
+- [ ] Search & filter tasks
+- [ ] Form validation with react-hook-form
+- [ ] Toast notifications
+- [ ] Task deadlines
