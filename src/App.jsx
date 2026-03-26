@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import Subjects from "./pages/Subjects";
 import Tasks from "./pages/Tasks";
 import Revision from "./pages/Revision";
+import AITools from "./pages/AITools";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/subjects" element={<Subjects />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/revision" element={<Revision />} />
+            <Route path="/ai-tools" element={<AITools />} />
           </Routes>
         </Router>
       );
