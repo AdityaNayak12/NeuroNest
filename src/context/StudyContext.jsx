@@ -2,11 +2,23 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const StudyContext = createContext();
 
+const load = (key) => {
+    try {
+        const data = localStorage.getItem(key);
+        return data ? JSON.parse(data) : [];
+    } catch {
+        return [];
+    }
+};
 
 export const StudyProvider = ({children}) =>{
-    const [subjects, setSubjects] = useState([]);
-    const [topics, setTopics] = useState([]);
-    const [tasks, setTasks] = useState([]);
+    const [subjects, setSubjects] = useState(() => load("subjects"));
+    const [topics, setTopics] = useState(() => load("topics"));
+    const [tasks, setTasks] = useState(() => load("tasks"));
+
+    useEffect(() => localStorage.setItem("subjects", JSON.stringify(subjects)), [subjects]);
+    useEffect(() => localStorage.setItem("topics", JSON.stringify(topics)), [topics]);
+    useEffect(() => localStorage.setItem("tasks", JSON.stringify(tasks)), [tasks]);
 
 
     const addSubject = (subject) =>{
