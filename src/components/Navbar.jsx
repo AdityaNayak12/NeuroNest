@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <nav className="bg-[#020617] border-b border-gray-800 px-6 py-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold text-white">NeuroNest 🧠</h1>
+      <h1 className="text-xl font-bold text-white">NeuroNest</h1>
 
       <div className="flex gap-2">
         <Link to="/dashboard" className={linkClass("/dashboard")}>
@@ -23,6 +23,9 @@ function Navbar() {
         </Link>
         <Link to="/tasks" className={linkClass("/tasks")}>
           Tasks
+        </Link>
+        <Link to="/revision" className={linkClass("/revision")}>
+          Revision
         </Link>
         <Link to="/ai-tools" className={linkClass("/ai-tools")}>
           AI Tools
